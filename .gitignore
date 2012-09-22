@@ -1,0 +1,6 @@
+*.tmp
+*.swp
+*/.sass-cache
+*/data
+*/cache
+*/log
