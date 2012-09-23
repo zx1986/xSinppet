@@ -17,12 +17,10 @@ $(document).ready ->
 
         $(items).each (item_num, item_value) ->
             if item_value
-                $("#{holder}").append "<p style='display:none'>#{item_value}</p>"
-                $("#{holder} p:last").delay(delay_time).show('slow')
+                item = "<p style='display:none'>#{item_value}</p>"
+                $("#{holder}").append $(item).delay(delay_time).show('slow')
                 delay_time = delay_time + 1000
-                if $("#{holder} p").length > 3
-                    $("#{holder} p:first").delay(delay_time).hide(5000).remove()
-                    console.dir(this)
+            $("#{holder} p:first").hide('slow', -> $(this).remove()) while $("#{holder} p").length > 5
 
     show_error = (error, holder) ->
         $("#{holder}").text "Error: #{error}"

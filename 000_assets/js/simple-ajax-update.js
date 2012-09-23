@@ -21,15 +21,19 @@
       delay_time = 0;
       items = data.split('\n');
       return $(items).each(function(item_num, item_value) {
+        var item, _results;
         if (item_value) {
-          $("" + holder).append("<p style='display:none'>" + item_value + "</p>");
-          $("" + holder + " p:last").delay(delay_time).show('slow');
+          item = "<p style='display:none'>" + item_value + "</p>";
+          $("" + holder).append($(item).delay(delay_time).show('slow'));
           delay_time = delay_time + 1000;
-          if ($("" + holder + " p").length > 3) {
-            $("" + holder + " p:first").delay(delay_time).hide(5000).remove();
-            return console.dir(this);
-          }
         }
+        _results = [];
+        while ($("" + holder + " p").length > 5) {
+          _results.push($("" + holder + " p:first").hide('slow', function() {
+            return $(this).remove();
+          }));
+        }
+        return _results;
       });
     };
     show_error = function(error, holder) {
