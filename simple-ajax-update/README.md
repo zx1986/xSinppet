@@ -1,4 +1,1 @@
-```
-mkdir -p data
-echo 'hello' > data/test
-```
+stupid ajax update ....
