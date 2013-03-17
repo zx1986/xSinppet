@@ -1,0 +1,11 @@
+guard 'haml' do
+  watch(/^[a-zA-Z0-9]+\.haml$/)
+end
+
+guard 'livereload' do
+  watch(%r{^[a-zA-Z0-9]+\.(css|html)$})
+end
+
+guard 'compass' do
+  watch(/^[a-zA-Z0-9]+\.scss$/)
+end
