@@ -3,4 +3,4 @@ init:
 	sudo apt-get install python-pip git-core
 	sudo apt-get install python-carrot python-amqplib 
 	sudo ldconfig
-	sudo pip install pika==0.9.5
+	sudo pip install pika
