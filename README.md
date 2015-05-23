@@ -1,1 +1,1 @@
-Powered by a lots of greate tools!
+Some practices and code snippets.
